@@ -20,7 +20,7 @@ RUN chown -R 1001:0 /opt/app-root
 RUN dnf install -y tar bsdtar shadow-utils ; dnf clean all
 
 
-RUN dnf install -y rubygem-bundler ruby-devel make gcc gcc-c++ git libffi-devel redhat-rpm-config; dnf clean all
+RUN dnf install -y rubygem-bundler ruby-devel make gcc gcc-c++ findutils git libffi-devel redhat-rpm-config; dnf clean all
 RUN gem install ascii_binder 
 COPY ./s2i/bin/ $STI_SCRIPTS_PATH
 WORKDIR ${HOME}
