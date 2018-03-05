@@ -2,5 +2,4 @@
 set -e
 
 cd /tmp/src
-make
-
+make -f /usr/libexec/s2i/Makefile

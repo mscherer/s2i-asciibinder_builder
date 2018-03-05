@@ -11,7 +11,7 @@ LABEL \
 
 
 ENV \
-    STI_SCRIPTS_PATH=/usr/libexec/s2i \
+    STI_SCRIPTS_PATH=/usr/libexec/s2i/ \
     HOME=/opt/app-root/src \
     PATH=/opt/app-root/src/bin:/opt/app-root/bin:$PATH
 RUN mkdir -p /opt/app-root/src
@@ -22,12 +22,12 @@ RUN dnf install -y tar bsdtar shadow-utils ; dnf clean all
 
 RUN dnf install -y rubygem-bundler ruby-devel make gcc gcc-c++ findutils git libffi-devel redhat-rpm-config; dnf clean all
 RUN gem install ascii_binder 
-COPY ./s2i/bin/ $STI_SCRIPTS_PATH
+COPY ./s2i/Makefile ./s2i/bin/ $STI_SCRIPTS_PATH
 WORKDIR ${HOME}
 
 USER 1001
 
-EXPOSE 8080
+#EXPOSE 8080
 # Set the default CMD to print the usage of the language image
 CMD $STI_SCRIPTS_PATH/usage
 
