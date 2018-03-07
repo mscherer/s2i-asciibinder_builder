@@ -26,7 +26,7 @@ COPY ./s2i/Makefile ./s2i/bin/ $STI_SCRIPTS_PATH
 RUN mkdir -p /srv/build
 WORKDIR ${HOME}
 
-VOLUME /srv/build
+#VOLUME /srv/build
 
 USER 1001
 
