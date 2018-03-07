@@ -1,5 +1,5 @@
 #!/bin/bash
 rm -Rf /srv/build/
-cp -R /tmp/src/_build /srv/build/
+cp -R /tmp/src/_build/* /srv/build/
 sleep infinity
 
