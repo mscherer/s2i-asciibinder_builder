@@ -1,4 +1,5 @@
 #!/bin/bash
 rm -Rf /srv/build/
 cp -R /tmp/src/_build /srv/build/
-exec cat
+sleep infinity
+
