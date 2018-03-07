@@ -23,10 +23,10 @@ RUN dnf install -y tar bsdtar shadow-utils ; dnf clean all
 RUN dnf install -y rubygem-bundler ruby-devel make gcc gcc-c++ findutils git libffi-devel redhat-rpm-config; dnf clean all
 RUN gem install ascii_binder 
 COPY ./s2i/Makefile ./s2i/bin/ $STI_SCRIPTS_PATH
-RUN mkdir -p /tmp/src/_build
+RUN mkdir -p /srv/build
 WORKDIR ${HOME}
 
-VOLUME /tmp/src/_build
+VOLUME /srv/build
 
 USER 1001
 
